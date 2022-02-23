@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.auties00</groupId>
     <artifactId>map</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>A module for Jackson to easily serialize maps of any type</description>
     <url>https://github.com/Auties00/MapModule</url>
@@ -23,7 +23,8 @@
     <scm>
         <url>https://github.com/Auties00/MapModule/tree/master</url>
         <connection>scm:git:https://github.com/Auties00/MapModule.git</connection>
-    </scm>
+      <tag>map-1.0</tag>
+  </scm>
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -79,6 +80,16 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
