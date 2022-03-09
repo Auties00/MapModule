@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import java.io.IOException;
 import java.util.Map;
 
-class MapSerializer<K, V> extends StdSerializer<Map<K, V>> {
+public class MapSerializer<K, V> extends StdSerializer<Map<K, V>> {
     public MapSerializer() {
         super(Map.class, true);
     }

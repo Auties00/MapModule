@@ -26,6 +26,6 @@ class MapDeserializer<K, V> extends StdDeserializer<Map<K, V>> {
     public Map<K, V> deserialize(JsonParser parser, DeserializationContext context) throws IOException {
         return context.<List<MapEntry<K, V>>>readValue(parser, type)
                 .stream()
-                .collect(Collectors.toMap(MapEntry::key, MapEntry::value));
+                .collect(Collectors.toMap(MapEntry::key, MapEntry::value, (first, second) -> second));
     }
 }

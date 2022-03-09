@@ -7,11 +7,12 @@ import com.fasterxml.jackson.databind.deser.BeanDeserializerModifier;
 import com.fasterxml.jackson.databind.deser.std.StdKeyDeserializer;
 import com.fasterxml.jackson.databind.type.MapType;
 
-class MapDeserializerModifier extends BeanDeserializerModifier {
+public class MapDeserializerModifier extends BeanDeserializerModifier {
     @Override
     public JsonDeserializer<?> modifyMapDeserializer(DeserializationConfig config, MapType type, BeanDescription description, JsonDeserializer<?> deserializer) {
         var keyDeserializer = StdKeyDeserializer.forType(type.getKeyType().getRawClass());
-        return keyDeserializer == null ? new MapDeserializer<>(type, config.getTypeFactory())
-                : deserializer;
+        var valueDeserializer = StdKeyDeserializer.forType(type.getContentType().getRawClass());
+        return keyDeserializer != null && valueDeserializer != null ? deserializer
+                : new MapDeserializer<>(type, config.getTypeFactory());
     }
 }
