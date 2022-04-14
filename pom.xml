@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.auties00</groupId>
     <artifactId>map-module</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>A module for Jackson to easily serialize maps of any type</description>
     <url>https://github.com/Auties00/MapModule</url>
@@ -23,7 +23,7 @@
     <scm>
         <url>https://github.com/Auties00/MapModule/tree/master</url>
         <connection>scm:git:https://github.com/Auties00/MapModule.git</connection>
-      <tag>HEAD</tag>
+      <tag>map-module-1.1</tag>
   </scm>
     <distributionManagement>
         <snapshotRepository>
